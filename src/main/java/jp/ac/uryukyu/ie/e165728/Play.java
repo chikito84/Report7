@@ -7,6 +7,8 @@ public class Play {
     private int stone, num, a, b, ex, k, i, n, kk;
     private int[] Mt = {field.getVal1(), field.getVal2(), field.getVal3()};
 
+    public int[] getMt(){return Mt;}
+
     public void Player(){
         Scanner scan = new Scanner(System.in);
         while (Mt[0] + Mt[1] + Mt[2] != 0) {
@@ -18,27 +20,27 @@ public class Play {
                 stone = scan.nextInt();
 
                 if (num == 1) {
-                    if (Mt[num-1] >= stone-1 && Mt[num-1] - stone >= 0 && Mt[num-1] != 0) {
-                        Mt[num-1] -= stone;
+                    if (Mt[num - 1] - stone >= 0 && Mt[num - 1] != 0) {
+                        Mt[num - 1] -= stone;
                     } else {
                         System.out.println("そこから石を取ることはできません。");
                     }
                 } else if (num == 2) {
-                    if (Mt[num-1] >= stone-1 && Mt[num-1] - stone >= 0 && Mt[num-1] != 0) {
-                        Mt[num-1] -= stone;
+                    if (Mt[num - 1] - stone >= 0 && Mt[num - 1] != 0) {
+                        Mt[num - 1] -= stone;
                     } else {
                         System.out.println("そこから石を取ることはできません。");
                     }
                 } else if (num == 3) {
-                    if (Mt[num-1] >= stone-1 && Mt[num-1] - stone >= 0 && Mt[num-1] != 0) {
-                        Mt[num-1] -= stone;
+                    if (Mt[num - 1] - stone >= 0 && Mt[num - 1] != 0) {
+                        Mt[num - 1] -= stone;
                     } else {
                         System.out.println("そこから石を取ることはできません。");
                     }
-                }else{
+                } else {
                     System.out.println("そこに石はありません。");
                 }
-                System.out.println("山は (" +Mt[0] + "," +Mt[1] + "," +Mt[2] + ")です。");
+                System.out.println("山は (" + Mt[0] + "," + Mt[1] + "," + Mt[2] + ")です。");
             }
             Computer();
         }
