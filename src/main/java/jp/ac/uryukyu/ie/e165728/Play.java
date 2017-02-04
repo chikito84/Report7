@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Play {
     Field field = new Field();
 
-    private int stone, num, a, b, ex, k, i, n, kk;
+    private int stone, num, ex, k, i, n, kk;
     private int[] Mt = {field.getVal1(), field.getVal2(), field.getVal3()};
 
     public int[] getMt(){return Mt;}
@@ -47,8 +47,6 @@ public class Play {
     }
 
     public void Computer(){
-        a = (int) (Math.random() * 9) + 1;
-        b = (int) (Math.random() * 3);
 
         while (Mt[0] + Mt[1] + Mt[2] != 0) {
             if (Mt[0] != 0 && Mt[1] == 0 && Mt[2] == 0) {
