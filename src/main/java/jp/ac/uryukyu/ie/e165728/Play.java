@@ -65,18 +65,20 @@ public class Play {
                 System.out.println("山は（" + Mt[0] + "," + Mt[1] + "," + Mt[2] + ")です。");
             } else{
                 ex = Mt[0]^Mt[1]^Mt[2];
-                k = 0;
-                for (i = 0; i < 3; i++) {
-                    k = Mt[i] ^ ex;
-                    if (Mt[i] > k) {
-                        n = i;
-                        break;
+                if(ex != 0) {
+                    k = 0;
+                    for (i = 0; i < 3; i++) {
+                        k = Mt[i] ^ ex;
+                        if (Mt[i] > k) {
+                            n = i;
+                            break;
+                        }
                     }
+                    kk = Mt[n] - k;
+                    Mt[n] = k;
+                    System.out.println("COMは" + (n + 1) + "番目の山から" + kk + "個の石を取った。");
+                    System.out.println("山は（" + Mt[0] + "," + Mt[1] + "," + Mt[2] + ")です。");
                 }
-                kk = Mt[n] - k;
-                Mt[n] = k;
-                System.out.println("COMは" + (n + 1) + "番目の山から" + kk + "個の石を取った。");
-                System.out.println("山は（" + Mt[0] + "," + Mt[1] + "," + Mt[2] + ")です。");
                 Player();
             }
         }
